@@ -1,0 +1,60 @@
+# Backend
+fastapi
+uvicorn[standard]
+
+# Database
+sqlalchemy
+
+# Validation
+pydantic
+
+# File Watching
+watchdog
+
+# Logging
+python-json-logger
+
+# Environment
+python-dotenv
+
+# Data Processing
+numpy
+pandas
+
+# Utilities
+requests
+tqdm
+rich
+
+# Log Parsing
+drain3
+
+# Metrics
+psutil
+
+# Machine Learning
+scikit-learn
+joblib
+scipy
+
+# Deep Learning
+tensorflow
+tensorboard
+
+# NLP
+sentence-transformers
+transformers
+faiss-cpu
+spacy
+
+# MLOps
+mlflow
+bentoml
+
+# Testing
+pytest
+
+# Formatting
+black
+isort
+flake8
