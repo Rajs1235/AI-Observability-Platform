@@ -208,11 +208,8 @@ Instead of implementing isolated machine learning models, the objective is to un
 
 Next milestone:
 
-- Live log collection
-- File watcher
-- SQLite storage
 - FastAPI backend
-
+- ML Part
 ---
 
 # Repository Structure
