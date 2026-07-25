@@ -1,12 +1,12 @@
 # AI Observability Platform
 
-> An AI-powered observability platform for real-time log monitoring, intelligent log analysis, anomaly detection, and failure prediction.
+An AI-powered observability platform for real-time log monitoring, intelligent log analysis, anomaly detection, and failure prediction.
 
-> **Status:** 🚧 Under Active Development
+**Status:** Under Active Development
 
 ---
 
-## Overview
+# Overview
 
 Modern applications generate thousands (or even millions) of log entries every day. Finding the root cause of failures from raw logs is often slow, repetitive, and requires significant manual effort.
 
@@ -26,7 +26,7 @@ Rather than being just another log parser, the goal is to combine modern softwar
 
 # Vision
 
-```
+```text
                 Running Application
                         │
                  Python Logging
@@ -100,136 +100,176 @@ Rather than being just another log parser, the goal is to combine modern softwar
 
 ---
 
-# Tech Stack (Planned)
+# Tech Stack
 
-### Backend
+## Backend
 
 - Python
 - FastAPI
 
-### Database
+## Database
 
 - SQLite (Development)
 - MongoDB (Future)
 
-### NLP
+## NLP
 
 - Sentence Transformers
 - FAISS / Vector Database
 
-### Machine Learning
+## Machine Learning
 
 - Scikit-learn
 
-### Deep Learning
+## Deep Learning
 
 - TensorFlow / PyTorch
 
-### MLOps
+## MLOps
 
 - MLflow
 - BentoML
 
-### Deployment
+## Deployment
 
 - Docker
 
-### Frontend
+## Frontend
 
 - React
-- TailwindCSS
+- Tailwind CSS
 
 ---
 
 # Development Roadmap
 
-## Phase 1
+## Phase 1 – Data Collection
 
 - [ ] Project setup
 - [ ] Logging module
 - [ ] Live log collector
+- [ ] Structured log parser
 - [ ] SQLite integration
+- [ ] Repository layer
+- [ ] FastAPI backend
+
+---
+
+## Phase 2 – Observability
+
 - [ ] REST APIs
-
----
-
-## Phase 2
-
-- [ ] Log parsing
-- [ ] Template extraction
-- [ ] Dashboard
+- [ ] Log analytics
 - [ ] Search & filtering
+- [ ] Dashboard
+- [ ] Template extraction (Drain3)
 
 ---
 
-## Phase 3
+## Phase 3 – NLP
 
-- [ ] NLP pipeline
+- [ ] Log embeddings
 - [ ] Semantic search
-- [ ] Similar incident detection
+- [ ] Similar incident retrieval
+- [ ] Intelligent clustering
 
 ---
 
-## Phase 4
+## Phase 4 – Machine Learning
 
-- [ ] Machine learning pipeline
-- [ ] Anomaly detection
-- [ ] Alerting
+- [ ] Feature engineering
+- [ ] Unsupervised anomaly detection
+- [ ] Error trend analysis
+- [ ] Incident scoring
 
 ---
 
-## Phase 5
+## Phase 5 – Deep Learning
 
-- [ ] Deep learning pipeline
+- [ ] Sequence generation
+- [ ] DeepLog implementation
 - [ ] Failure prediction
-- [ ] Sequence modelling
+- [ ] Next-event prediction
 
 ---
 
-## Phase 6
+## Phase 6 – Production
 
 - [ ] Docker deployment
-- [ ] MLOps
+- [ ] MLOps pipeline
 - [ ] AI assistant
+- [ ] Production deployment
 
 ---
 
-# Why this project?
+# Why This Project?
 
-This project is designed as a learning journey into modern AI-powered observability systems.
+The objective of this project is to build a complete AI-powered observability platform while understanding every stage of the pipeline.
 
-Instead of implementing isolated machine learning models, the objective is to understand and build the complete lifecycle of an intelligent monitoring platform—from log collection and preprocessing to NLP, anomaly detection, forecasting, and deployment.
+Instead of implementing isolated machine learning models, the focus is on designing and developing an end-to-end system that spans:
+
+- Log collection
+- Data ingestion
+- Log parsing
+- Data storage
+- REST APIs
+- NLP
+- Machine Learning
+- Deep Learning
+- MLOps
+- Deployment
+
+The goal is to understand how intelligent monitoring systems are designed and implemented in production environments.
 
 ---
 
 # Current Status
 
-🚧 Architecture & System Design Complete
+Architecture and core ingestion pipeline completed.
 
-Next milestone:
+Completed components:
+
+- Log generator
+- Log reader
+- File watcher
+- Log parser
+- Structured `LogEvent` model
+- SQLite persistence layer
+- Repository pattern
+- Database inspection utilities
+
+Current milestone:
 
 - FastAPI backend
-- ML Part
+- Analytics APIs
+- Template extraction
+
 ---
 
 # Repository Structure
 
-```
+```text
 AI-Observability-Platform/
 
 ├── backend/
 ├── collector/
-├── parser/
+├── config/
 ├── database/
-├── frontend/
 ├── docs/
 ├── docker/
+├── frontend/
+├── ml/
+├── models/
+├── nlp/
+├── parser/
+├── scripts/
+├── services/
 ├── tests/
+├── utils/
 └── README.md
 ```
 
 ---
 
-## License
+# License
 
 MIT License
