@@ -2,7 +2,7 @@
 
 An AI-powered observability platform for real-time log monitoring, intelligent log analysis, anomaly detection, and failure prediction.
 
-**Status:** Under Active Development
+**Status:** 🚧 Under Active Development
 
 ---
 
@@ -15,6 +15,8 @@ This project aims to build an end-to-end AI-powered observability platform capab
 - Collecting logs from running applications
 - Structuring and parsing logs automatically
 - Detecting recurring log patterns
+- Extracting log templates using Drain3
+- Providing REST APIs for log analytics
 - Performing semantic log search using NLP
 - Detecting anomalies using Machine Learning
 - Predicting failures using Deep Learning
@@ -32,15 +34,24 @@ Rather than being just another log parser, the goal is to combine modern softwar
                  Python Logging
                         │
                         ▼
-                  Log Collector
+                  Log Generator
                         │
                         ▼
-                 Log Processing
+                   File Watcher
+                        │
+                        ▼
+                  Log Processing
         ┌──────────────┴──────────────┐
         ▼                             ▼
-    Raw Log Storage              Template Engine
+    SQLite Storage             Drain3 Templates
         │                             │
         └──────────────┬──────────────┘
+                       ▼
+                 FastAPI Backend
+        ┌──────────────┼──────────────┐
+        ▼              ▼              ▼
+     Logs API     Templates API    Analytics API
+                       │
                        ▼
                 AI Processing Layer
         NLP • ML • Deep Learning
@@ -50,16 +61,21 @@ Rather than being just another log parser, the goal is to combine modern softwar
 
 ---
 
-# Planned Features
+# Features
 
 ## Core Observability
 
-- Live log monitoring
-- File watching
-- Structured log parsing
-- Log template extraction
-- Centralized log storage
-- Real-time dashboard
+- ✅ Synthetic log generation
+- ✅ Live log monitoring
+- ✅ File watching
+- ✅ Structured log parsing
+- ✅ Log template extraction (Drain3)
+- ✅ SQLite persistence
+- ✅ Repository pattern
+- ✅ REST APIs for logs
+- ✅ REST APIs for templates
+- ✅ Analytics APIs
+- 🚧 Real-time dashboard
 
 ---
 
@@ -74,6 +90,7 @@ Rather than being just another log parser, the goal is to combine modern softwar
 
 ## Machine Learning
 
+- Feature engineering
 - Unsupervised anomaly detection
 - Pattern discovery
 - Error trend analysis
@@ -112,6 +129,10 @@ Rather than being just another log parser, the goal is to combine modern softwar
 - SQLite (Development)
 - MongoDB (Future)
 
+## Log Processing
+
+- Drain3
+
 ## NLP
 
 - Sentence Transformers
@@ -145,23 +166,26 @@ Rather than being just another log parser, the goal is to combine modern softwar
 
 ## Phase 1 – Data Collection
 
-- [ ] Project setup
-- [ ] Logging module
-- [ ] Live log collector
-- [ ] Structured log parser
-- [ ] SQLite integration
-- [ ] Repository layer
-- [ ] FastAPI backend
+- [x] Project setup
+- [x] Logging module
+- [x] Log generator
+- [x] Live log collector
+- [x] File watcher
+- [x] Structured log parser
+- [x] SQLite integration
+- [x] Repository layer
+- [x] FastAPI backend
 
 ---
 
 ## Phase 2 – Observability
 
-- [ ] REST APIs
-- [ ] Log analytics
-- [ ] Search & filtering
+- [x] REST APIs
+- [x] Log analytics
+- [x] Search & filtering
+- [x] Template extraction (Drain3)
+- [x] Template analytics
 - [ ] Dashboard
-- [ ] Template extraction (Drain3)
 
 ---
 
@@ -210,6 +234,7 @@ Instead of implementing isolated machine learning models, the focus is on design
 - Log collection
 - Data ingestion
 - Log parsing
+- Template extraction
 - Data storage
 - REST APIs
 - NLP
@@ -224,24 +249,26 @@ The goal is to understand how intelligent monitoring systems are designed and im
 
 # Current Status
 
-Architecture and core ingestion pipeline completed.
+## Completed Components
 
-Completed components:
+- ✅ Log generator
+- ✅ Log reader
+- ✅ File watcher
+- ✅ Log parser
+- ✅ Structured `LogEvent` model
+- ✅ SQLite persistence layer
+- ✅ Repository pattern
+- ✅ Drain3 template extraction
+- ✅ FastAPI backend
+- ✅ Log APIs
+- ✅ Template APIs
+- ✅ Analytics APIs
 
-- Log generator
-- Log reader
-- File watcher
-- Log parser
-- Structured `LogEvent` model
-- SQLite persistence layer
-- Repository pattern
-- Database inspection utilities
+## Current Milestone
 
-Current milestone:
-
-- FastAPI backend
-- Analytics APIs
-- Template extraction
+- React dashboard
+- Feature engineering
+- Machine Learning pipeline
 
 ---
 
@@ -265,11 +292,7 @@ AI-Observability-Platform/
 ├── services/
 ├── tests/
 ├── utils/
+├── view_logs.py
+├── generate_logs.py
 └── README.md
 ```
-
----
-
-# License
-
-MIT License
