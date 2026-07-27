@@ -28,7 +28,7 @@ def main():
     # Save it
     repository.save(event)
 
-    print("✅ Event saved successfully.\n")
+    print(" Event saved successfully.\n")
 
     # Fetch all logs
     logs = repository.get_all_logs()

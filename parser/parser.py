@@ -1,13 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
-
-@dataclass
-class LogEvent:
-    timestamp: datetime
-    level: str
-    message: str
-    line_number: int
-    logger_name: str
+import uuid
+from models.log_event import LogEvent
 
 class LogParser:
 
@@ -26,13 +20,16 @@ class LogParser:
             logger_name = parts[0].strip()
             level = parts[1].strip()
             message = " - ".join(parts[2:]).strip()
+            uuid_str=str(uuid.uuid4())
 
             return LogEvent(
-                timestamp=timestamp,
+                timestamp=timestamp.isoformat(),
                 level=level,
+                uuid=uuid_str,
                 message=message,
                 line_number=line_number,
-                logger_name=logger_name
+                logger_name=logger_name,
+                raw_log=log_line
             )
         except Exception as e:
             print(f"Error parsing log line {line_number}: {e}")
