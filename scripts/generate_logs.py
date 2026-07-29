@@ -1,12 +1,16 @@
+from pathlib import Path
 import logging
 import time
-from pathlib import Path
 from numpy import random
 
-LOG_DIR = Path("collector") / "sample_logs"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+LOG_DIR = PROJECT_ROOT / "collector" / "sample_logs"
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
 LOG_FILE = LOG_DIR / "app.log"
+
+print("Writing logs to:", LOG_FILE)
 
 logging.basicConfig(
     filename=LOG_FILE,

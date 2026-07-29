@@ -270,6 +270,3 @@ AI-Observability-Platform/
 
 ---
 
-# License
-
-MIT License

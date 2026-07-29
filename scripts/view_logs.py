@@ -441,3 +441,4 @@ async def get_templatebyid(cluster_id: int):
 
     finally:
         repository.close()
+

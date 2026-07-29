@@ -27,7 +27,7 @@ class LogParser:
                 level=level,
                 uuid=uuid_str,
                 message=message,
-                line_number=line_number,
+               
                 logger_name=logger_name,
                 raw_log=log_line
             )

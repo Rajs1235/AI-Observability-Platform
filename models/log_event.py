@@ -7,6 +7,5 @@ class LogEvent:
     level: str
     message: str
     uuid:str
-    line_number: int
     logger_name: str
     raw_log:str

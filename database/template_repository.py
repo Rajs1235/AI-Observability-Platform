@@ -2,7 +2,7 @@ from pathlib import Path
 import sqlite3
 
 DATABASE_PATH = Path(__file__).resolve().parent / "logs.db"
-
+METRICS_DATABASE_PATH = Path(__file__).resolve().parent / "metrics.db"
 
 class TemplateRepository:
 
