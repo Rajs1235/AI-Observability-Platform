@@ -15,7 +15,7 @@ from database.repository import MetricsRepository
 
 
 def collect_metrics() -> MetricsEvent | None:
-    cpu = psutil.cpu_percent(interval=1)
+    cpu = psutil.cpu_percent(interval=0.1)
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage("/").percent
 
@@ -42,7 +42,7 @@ def main():
         while True:
             event = collect_metrics()
             repository.save(event)
-            time.sleep(2)
+            time.sleep(0.2)
     except KeyboardInterrupt:
         print("\nStopped.")
     finally:

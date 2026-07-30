@@ -20,7 +20,8 @@ python-dotenv
 # Data Processing
 numpy
 pandas
-
+matplotlib
+seaborn
 # Utilities
 requests
 tqdm
