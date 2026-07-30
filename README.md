@@ -251,12 +251,13 @@ AI-Observability-Platform/
 - ✔ Metrics collection
 - ✔ FastAPI REST APIs
 - ✔ Analytics endpoints
+- ✔ Dataset preprocessing
+- ✔ Exploratory Data Analysis (EDA)
+- ✔ Feature engineering
 
 ### Current Focus
 
-- Dataset preprocessing
-- Exploratory Data Analysis (EDA)
-- Feature engineering
+
 - Machine Learning pipeline
 
 ---
