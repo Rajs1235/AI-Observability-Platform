@@ -1,6 +1,6 @@
 # AI Observability Platform
 
-An AI-powered observability platform for real-time log collection, intelligent log analysis, template mining, and anomaly detection.
+An AI-powered observability platform for intelligent log analysis, system metrics monitoring, semantic log understanding, and anomaly detection using Machine Learning and Natural Language Processing.
 
 > 🚧 **Status:** Active Development
 
@@ -8,51 +8,61 @@ An AI-powered observability platform for real-time log collection, intelligent l
 
 # Overview
 
-Modern distributed applications generate thousands of log entries every minute. Manually identifying failures, recurring issues, and abnormal system behavior from raw logs is difficult and time-consuming.
+Modern distributed systems continuously generate application logs and infrastructure metrics. Identifying failures, performance degradation, and recurring incidents from this data using traditional rule-based monitoring is difficult.
 
-This project aims to build a production-oriented AI observability platform capable of collecting, processing, analyzing, and learning from application logs and system metrics.
+This project aims to build a production-oriented AI observability platform capable of collecting, processing, analyzing, and learning from application logs and system metrics in real time.
 
-The long-term goal is to combine Software Engineering, NLP, Machine Learning, Deep Learning, and MLOps into a unified observability solution.
+The long-term vision is to combine modern Software Engineering, NLP, Machine Learning, Deep Learning, and MLOps into an intelligent observability system capable of:
+
+- Detecting anomalous logs and system metrics
+- Understanding log semantics
+- Retrieving similar historical incidents
+- Predicting failures before they occur
+- Assisting with root cause analysis
+- Supporting production-scale deployment
 
 ---
 
 # Architecture
 
 ```text
-                Running Application
-                        │
-                 Python Logging
-                        │
-                        ▼
-                  Log Generator
-                        │
-                        ▼
-                   File Watcher
-                        │
-                        ▼
-                Log Processing Service
-                        │
-        ┌───────────────┴───────────────┐
-        ▼                               ▼
-   SQLite Database                 Drain3 Engine
-        │                               │
-        └───────────────┬───────────────┘
-                        ▼
-                  FastAPI Backend
-        ┌───────────────┼───────────────┐
-        ▼               ▼               ▼
-     Logs API     Templates API   Analytics API
-                        │
-                        ▼
-             ML / NLP Processing Layer
-                        │
-                        ▼
-                React Dashboard (WIP)
+                    Running Application
+                            │
+                     Python Logging
+                            │
+                            ▼
+                    Log Generator
+                            │
+                            ▼
+                     File Watcher
+                            │
+                            ▼
+                 Log Processing Service
+                            │
+          ┌─────────────────┴─────────────────┐
+          ▼                                   ▼
+     SQLite Database                    Drain3 Engine
+          │                                   │
+          └─────────────────┬─────────────────┘
+                            ▼
+                     FastAPI Backend
+          ┌─────────────────┼─────────────────┐
+          ▼                 ▼                 ▼
+      Logs API        Templates API     Analytics API
+                            │
+                            ▼
+                AI / ML Processing Layer
+          ┌─────────────────┼─────────────────┐
+          ▼                 ▼                 ▼
+    Metrics Models     NLP Models      Future Deep Learning
+                            │
+                            ▼
+                   React Dashboard (WIP)
 ```
 
 ---
 
-# Current Features
+# Features
 
 ## Log Collection
 
@@ -60,7 +70,6 @@ The long-term goal is to combine Software Engineering, NLP, Machine Learning, De
 - ✅ Live log monitoring
 - ✅ File watching
 - ✅ Structured log parsing
-- ✅ Log event modeling
 - ✅ SQLite persistence
 
 ---
@@ -70,20 +79,11 @@ The long-term goal is to combine Software Engineering, NLP, Machine Learning, De
 - ✅ Automatic template extraction using Drain3
 - ✅ Log clustering
 - ✅ Template analytics
-- ✅ Structured log storage
+- ✅ Structured template storage
 
 ---
 
-## Backend APIs
-
-- ✅ FastAPI backend
-- ✅ Log APIs
-- ✅ Template APIs
-- ✅ Analytics APIs
-
----
-
-## System Metrics
+## Metrics Monitoring
 
 - ✅ CPU monitoring
 - ✅ Memory monitoring
@@ -93,56 +93,111 @@ The long-term goal is to combine Software Engineering, NLP, Machine Learning, De
 
 ---
 
-## In Progress
+## Backend APIs
 
-- 🚧 React Dashboard
-- 🚧 Dataset preprocessing
-- 🚧 Feature engineering
-- 🚧 Machine Learning pipeline
+- ✅ FastAPI backend
+- ✅ Logs API
+- ✅ Templates API
+- ✅ Analytics API
+
+---
+
+# Machine Learning
+
+## Metrics Pipeline
+
+Completed:
+
+- Feature Engineering
+- Exploratory Data Analysis
+- Isolation Forest
+- One-Class SVM
+- Local Outlier Factor (LOF)
+- Elliptic Envelope
+- DBSCAN
+- PCA Visualization
+- Model Comparison
+- Model Serialization
+
+---
+
+## Logs NLP Pipeline
+
+Completed:
+
+- Exploratory Data Analysis
+- Feature Engineering
+- TF-IDF Vectorization
+- Isolation Forest Baseline
+- Sentence Transformer Embeddings (all-MiniLM-L6-v2)
+- Isolation Forest on Transformer Embeddings
+- PCA Visualization
+- Anomaly Visualization
+- Model Serialization
+
+---
+
+## Current Work
+
+- 🚧 Semantic Search
+- 🚧 Similar Incident Retrieval
+- 🚧 FAISS Integration
 
 ---
 
 # Tech Stack
 
-### Backend
+## Backend
 
 - Python
 - FastAPI
 
-### Database
+## Database
 
 - SQLite
 
-### Log Processing
+## Log Processing
 
 - Drain3
 
-### Machine Learning
+## Machine Learning
 
 - Scikit-learn
+- Isolation Forest
+- One-Class SVM
+- Local Outlier Factor
+- Elliptic Envelope
+- DBSCAN
 
-### NLP (Planned)
+## NLP
 
 - Sentence Transformers
-- FAISS
+- TF-IDF
+- Hugging Face Transformers
+- FAISS *(Planned)*
 
-### Deep Learning (Planned)
+## Data Processing
 
-- TensorFlow / PyTorch
+- Pandas
+- NumPy
 
-### MLOps (Planned)
+## Visualization
 
-- MLflow
-- BentoML
+- Matplotlib
+- Seaborn
 
-### Frontend
+## Model Serialization
+
+- Joblib
+
+## Frontend
 
 - React
 - Tailwind CSS
 
-### Deployment
+## Deployment
 
-- Docker
+- Docker *(Planned)*
 
 ---
 
@@ -154,62 +209,71 @@ The long-term goal is to combine Software Engineering, NLP, Machine Learning, De
 - [x] Synthetic log generator
 - [x] File watcher
 - [x] Log parser
-- [x] Log repository
+- [x] SQLite repositories
 - [x] Metrics collector
-- [x] SQLite integration
 - [x] FastAPI backend
 
 ---
 
-## Phase 2 — Observability ✅
+## Phase 2 — Data Preparation ✅
 
-- [x] Log APIs
-- [x] Template APIs
-- [x] Analytics APIs
-- [x] Drain3 integration
-
----
-
-## Phase 3 — Dashboard 🚧
-
-- [ ] React dashboard
-- [ ] Real-time log visualization
-- [ ] Metrics visualization
+- [x] Dataset preprocessing
+- [x] Feature engineering
+- [x] Exploratory Data Analysis
+- [x] Template extraction using Drain3
+- [x] Dataset cleaning
 
 ---
 
-## Phase 4 — NLP 🚧
+## Phase 3 — Metrics Anomaly Detection ✅
 
-- [ ] Log embeddings
-- [ ] Semantic search
-- [ ] Similar incident retrieval
+- [x] Isolation Forest
+- [x] One-Class SVM
+- [x] Local Outlier Factor
+- [x] Elliptic Envelope
+- [x] DBSCAN
+- [x] PCA Visualization
+- [x] Model Serialization
 
 ---
 
-## Phase 5 — Machine Learning 🚧
+## Phase 4 — Log Intelligence & NLP ✅
 
-- [ ] Feature engineering
-- [ ] Anomaly detection
-- [ ] Incident scoring
-- [ ] Pattern discovery
+- [x] TF-IDF Vectorization
+- [x] Isolation Forest Baseline
+- [x] Sentence Transformer Embeddings
+- [x] Transformer-based Anomaly Detection
+- [x] PCA Visualization
+- [x] Model Serialization
+
+---
+
+## Phase 5 — Semantic Retrieval 🚧
+
+- [ ] Semantic Search
+- [ ] Similar Incident Retrieval
+- [ ] FAISS Indexing
 
 ---
 
 ## Phase 6 — Deep Learning 🚧
 
-- [ ] Log sequence modeling
-- [ ] DeepLog implementation
-- [ ] Next-event prediction
-- [ ] Failure prediction
+- [ ] DeepLog Implementation
+- [ ] Log Sequence Modeling
+- [ ] Next Event Prediction
+- [ ] Failure Prediction
 
 ---
 
-## Phase 7 — Production 🚧
+## Phase 7 — Production Platform 🚧
 
-- [ ] Docker deployment
-- [ ] MLflow integration
-- [ ] BentoML deployment
-- [ ] Production deployment
+- [ ] React Dashboard
+- [ ] Real-time Inference
+- [ ] Prometheus Integration
+- [ ] Docker Deployment
+- [ ] MLflow Integration
+- [ ] BentoML Deployment
+- [ ] AI-assisted Root Cause Analysis
 
 ---
 
@@ -222,15 +286,17 @@ AI-Observability-Platform/
 ├── collector/
 ├── config/
 ├── database/
-├── docs/
 ├── docker/
 ├── frontend/
-├── ml/
-├── models/
-├── nlp/
 ├── parser/
-├── scripts/
+├── preprocessing/
 ├── services/
+├── Training/
+│   ├── Metricstraining.ipynb
+│   ├── Logstrain.ipynb
+│   └── models/
+│       ├── metrics/
+│       └── logs/
 ├── tests/
 ├── utils/
 ├── generate_logs.py
@@ -240,69 +306,46 @@ AI-Observability-Platform/
 
 ---
 
-# Current Progress
-
-### Completed
-
-- ✔ Synthetic log generation
-- ✔ Log parsing pipeline
-- ✔ Drain3 template extraction
-- ✔ SQLite repositories
-- ✔ Metrics collection
-- ✔ FastAPI REST APIs
-- ✔ Analytics endpoints
-- ✔ Dataset preprocessing
-- ✔ Exploratory Data Analysis (EDA)
-- ✔ Feature engineering
-
-### Current Focus
-
-
-- Machine Learning pipeline
-
----
-
-# Future Enhancements
-
-- Semantic log search
-- Intelligent incident retrieval
-- Log anomaly detection
-- Failure prediction
-- Root cause analysis
-- AI-assisted troubleshooting
-- Interactive observability dashboard
-
----
-
 # Datasets
 
-The platform uses a combination of **synthetic** and **public benchmark** datasets to support different stages of the machine learning pipeline.
+The platform combines **synthetic datasets** with **public benchmark datasets** to evaluate anomaly detection models across different environments.
 
 ## Synthetic Datasets
 
-The following datasets are generated by the platform itself:
+Generated by the platform.
 
-- **Application Logs**
-  - ~15,000+ structured log entries
-  - Generated using a custom synthetic log generator
-  - Automatically parsed and clustered using Drain3
+### Application Logs
 
-- **System Metrics**
-  - CPU utilization
-  - Memory utilization
-  - Disk utilization
-  - Network I/O
-  - Process count
+- 15,000+ structured log entries
+- Generated using a custom synthetic log generator
+- Parsed and clustered using Drain3
 
-These datasets are used for feature engineering, anomaly detection, and system behavior analysis.
+### System Metrics
+
+Collected continuously using the metrics collector.
+
+Includes:
+
+- CPU utilization
+- Memory utilization
+- Disk utilization
+- Network I/O
+- Process count
+
+These datasets are used for:
+
+- Feature Engineering
+- Exploratory Data Analysis
+- Machine Learning
+- Anomaly Detection
 
 ---
 
 ## Public Benchmark Datasets
 
-To improve model robustness and evaluate the NLP pipeline, publicly available log datasets from **LogHub** are also incorporated.
+Public datasets from **LogHub** are used to improve robustness and evaluate NLP models.
 
-Current benchmark datasets include:
+Current datasets include:
 
 - Linux
 - Apache
@@ -311,17 +354,50 @@ Current benchmark datasets include:
 - Mac
 - HealthApp
 
-These datasets are used for:
+These datasets support:
 
-- Template extraction
-- Semantic log analysis
-- Log clustering
-- Anomaly detection benchmarking
-- Generalization across diverse log sources
+- Template Extraction
+- Semantic Log Analysis
+- Log Clustering
+- Anomaly Detection Benchmarking
+- Cross-System Generalization
+
+> **Note:** Due to their size, generated datasets are not included in this repository. Synthetic datasets can be regenerated using the provided scripts, while public benchmark datasets can be downloaded from the LogHub project.
 
 ---
 
-> **Note:** Due to their size, generated datasets are not included in this repository. The project code can regenerate synthetic datasets, while public benchmark datasets can be obtained from the LogHub repository.
+# Current Progress
+
+| Module | Status |
+|---------|--------|
+| Log Collection | ✅ Complete |
+| Metrics Collection | ✅ Complete |
+| FastAPI Backend | ✅ Complete |
+| Drain3 Template Mining | ✅ Complete |
+| Feature Engineering | ✅ Complete |
+| Exploratory Data Analysis | ✅ Complete |
+| Metrics ML Pipeline | ✅ Complete |
+| Logs NLP Pipeline | ✅ Complete |
+| Model Serialization | ✅ Complete |
+| Semantic Search | 🚧 In Progress |
+| FAISS Integration | 🚧 Planned |
+| DeepLog | 🚧 Planned |
+| Dashboard | 🚧 Planned |
+| Production Deployment | 🚧 Planned |
+
+---
+
+# Future Enhancements
+
+- Semantic Log Retrieval
+- FAISS Vector Search
+- DeepLog Sequence Learning
+- Failure Prediction
+- Root Cause Analysis
+- AI-assisted Troubleshooting
+- Unified Log & Metrics Incident Scoring
+- LLM-powered Incident Explanation
+- Production-grade Observability Dashboard
 
 ---
 
