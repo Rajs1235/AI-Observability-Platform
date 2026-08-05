@@ -37,7 +37,7 @@ psutil
 scikit-learn
 joblib
 scipy
-
+jupyter
 # Deep Learning
 tensorflow
 tensorboard
